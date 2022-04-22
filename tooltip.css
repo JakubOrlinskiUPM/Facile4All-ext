@@ -1,0 +1,159 @@
+.changed-paragraph {
+    border: 2px solid grey;
+}
+
+.changed-paragraph-button {
+    --height: 2rem;
+    --width: 7rem;
+    border: 2px solid grey;
+    height: var(--height);
+    width: var(--width);
+    margin-top: 1rem !important;
+}
+
+.transformed {
+    background-color: yellow;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+    --background-color: #f5f5f5;
+    --dark-accent: #5b5b5b;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 30rem;
+    background-color: var(--background-color);
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(91, 91, 91, 0.52);
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -15rem;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+
+
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--dark-accent);
+}
+
+.tooltiptext .original, .tooltiptext .simplified {
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow-right {
+    --triangle-size: 15px;
+
+    border-top: var(--triangle-size) solid transparent;
+    border-bottom: var(--triangle-size) solid transparent;
+    border-left: var(--triangle-size) solid var(--dark-accent);
+    position: absolute;
+    left: 50%;
+    top: calc(50% - var(--triangle-size));
+}
+
+.tooltiptext .original {
+    border-right: 1px solid var(--dark-accent);
+}
+
+.tooltiptext .simplified {
+    border-left: 1px solid var(--dark-accent);
+}
+
+.tooltiptext .title {
+    display: block;
+    font-weight: bold;
+    border-bottom: 1px solid var(--dark-accent);
+    margin-bottom: 1rem;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    --tooltip-arrow-size: 10px;
+
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: calc(-1 * var(--tooltip-arrow-size));
+    border-width: var(--tooltip-arrow-size);
+    border-style: solid;
+    border-color: var(--dark-accent) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.lds-ring {
+    --fraction: 0.5;
+    marginp-left: 0.2rem;
+    display: inline-block;
+    position: relative;
+    width: calc(var(--height) * var(--fraction));
+    height: calc(var(--height) * var(--fraction));
+}
+.lds-ring div {
+    --fraction: 0.5;
+    margin: 0.1rem;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: calc(var(--height) * var(--fraction));
+    height: calc(var(--height) * var(--fraction));
+    border: calc(var(--height) * 0.1) solid black;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
